@@ -1,0 +1,39 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 0.3em;
+  border-radius: 0.3em;
+}
+
+li {
+  flex: 1;
+  list-style-type: none;
+}
+
+i {
+  pointer-events: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.fa-circle-check {
+  color: green;
+}
+
+.fa-trash {
+  color: rgb(178, 0, 0);
+}
