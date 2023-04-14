@@ -53,10 +53,13 @@ function addTask(e) {
 function checkedTask(e) {
   let checkedClass = e.target.classList[0];
   const parent = e.target.parentElement;
+  //if check button clicked
   if (checkedClass === "buttonCheck") {
+    //move it to the DONE section
     ulDone.appendChild(e.target.parentElement);
     const li = e.target.parentElement.childNodes[0];
     console.log(li.innerText);
+    //toggle the classlist LI for css
     li.classList.toggle("completed");
 
     // delete buttons after check
@@ -66,12 +69,12 @@ function checkedTask(e) {
     const index = todoItemArr.indexOf(li.innerText);
     console.log(li.innerText);
 
+    //Delete from local storage
     todoItemArr.splice(index, 1);
     console.log(todoItemArr);
-
     localStorage.setItem("todo", JSON.stringify(todoItemArr));
   }
-  //Delete the parent Div
+  //Delete the parent element <Div>
   if (checkedClass === "buttonDelete") {
     const li = e.target.parentElement.childNodes[0];
     parent.remove();
@@ -87,6 +90,7 @@ function undoTask(e) {
   let checkedClass = e.target.classList[0];
   const parent = e.target.parentElement;
   if (checkedClass === "buttonDelete") {
+    // append the parent element back to TODO
     ul.appendChild(parent);
     // change the icon
     parent.childNodes[1].style.display = "block";
@@ -100,6 +104,7 @@ function editTask(e) {
   console.log(e.target.classList[0]);
   if (taskToEdit === "todoli") {
     const edited = prompt("Please edit your ToDo");
+    //if prompt not empty, then store it and change the innerText
     if (edited) {
       const index = todoItemArr.indexOf(e.target.innerText);
       e.target.innerText = edited;
@@ -112,7 +117,7 @@ function editTask(e) {
 
 // ----------------LocalStorage-----------------
 
-// localStorage.getItem(JSON.parse("todo"));
+// check if we already have one , if yes , loop over the chickens and render them.;
 let todoItemArr = [];
 if (localStorage.getItem("todo")) {
   todoItemArr = JSON.parse(localStorage.getItem("todo"));
