@@ -73,7 +73,11 @@ function checkedTask(e) {
   }
   //Delete the parent Div
   if (checkedClass === "buttonDelete") {
+    const li = e.target.parentElement.childNodes[0];
     parent.remove();
+    const index = todoItemArr.indexOf(li.innerText);
+    todoItemArr.splice(index, 1);
+    localStorage.setItem("todo", JSON.stringify(todoItemArr));
   }
 }
 
@@ -143,8 +147,3 @@ newTaskButton.addEventListener("click", addTask);
 ul.addEventListener("click", checkedTask);
 ulDone.addEventListener("click", undoTask);
 ul.addEventListener("click", editTask);
-
-// const example = ["apple", "orange", "banana", "coconut"];
-// const ind = example.indexOf("banana");
-// example[ind] = "orange";
-// console.log(example);
