@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
     <title>Todo list</title>
     <script
       src="https://kit.fontawesome.com/d6ea364fa1.js"
@@ -14,7 +20,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <section class="sectionToday">
+      <section id="sectionNewTask" class="section">
         <h2>Today</h2>
         <div class="sectionNewTask">
           <form action="add new task" class="newTask">
@@ -27,13 +33,13 @@
           </form>
         </div>
       </section>
-      <section class="sectionToDo">
+      <section class="section">
         <h2>ToDo</h2>
         <div>
           <ul class="ulToDo"></ul>
         </div>
       </section>
-      <section class="sectionDone">
+      <section class="section">
         <h2>Done</h2>
         <div>
           <ul class="ulDone"></ul>

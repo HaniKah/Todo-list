@@ -1,11 +1,52 @@
+* {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+}
+button {
+  border: 1px solid black;
+  border-radius: 0.5em;
+  margin: 0.2em;
+}
+.wrapper {
+  max-width: 350px;
+  width: 50%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: black solid 3px;
+  padding: 1em;
+  background-color: rgb(231, 231, 231);
+  border-radius: 1.5em;
+}
+.section {
+  border: solid black 3px;
+  padding: 1em;
+  border-radius: 1.5em;
+  background-color: white;
+  box-shadow: 4px 4px 6px rgb(175, 175, 175);
+}
+#sectionNewTask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#newTaskInput {
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
 .todo {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 0.3em;
   border-radius: 0.3em;
+  cursor: pointer;
 }
-
+.todo:hover {
+  background-color: rgb(225, 225, 225);
+}
 li {
   flex: 1;
   list-style-type: none;
@@ -27,7 +68,7 @@ button {
 ul {
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  gap: 0.5em;
 }
 
 .fa-circle-check {
@@ -36,4 +77,10 @@ ul {
 
 .fa-trash {
   color: rgb(178, 0, 0);
+}
+.ulToDo {
+  padding: 0;
+}
+.ulDone {
+  padding: 0;
 }
